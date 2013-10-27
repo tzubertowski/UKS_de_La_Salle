@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{UKS de La Salle.
+\and
+Modernizacja serwisu.}
+\author{Tomasz Szymanek
+\and
+Tomasz Żubertowski}
+
+\date{2013-2014}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{UKS de La Salle}
+W ramach projektu zespołowego na Uniwersytecie Gdańskim chcemy podjąć się modernizacji serwisu (we współpracy z JIT Solutions):
+http://uksdelasalle.pl/
+\section{Aspekty prawne}
+\subsection{Fonty/Czcionki}
+Aby nie przeciążać hostingu i zniwelować problem roszczeń co do praw autorskich d/t czcionek planujemy bazować jedynie na czcionkach dostępnych na licencji Open Source, najprawdopodobniej wyłącznie z serwisu: 
+http://www.google.com/fonts
+\subsection{Zdjęcia, obrazy, stocki}
+Sprawa z obrazami ma się prościej aniżeli z czcionkami. Wszystkie zdjęcia i obrazy będą pochodzić ze źródeł uczniowskiego klubu sportowego UKS de La Salle. Ewentualne grafiki użyte w serwisie będą wygenerowane albo przy użyciu css, albo będą posiadały licencję Open Source.
+\subsection{Technologia/narzędzia pracy}
+Nie będziemy korzystać z gotowych rozwiązań w postaci skryptów, czy całych silników cms ( : ) ). Ponadto wszystkie narzędzia: edytory tekstu, edytory grafiki, których użycie zaplanowaliśmy są darmowe do użytku komercyjnego, bądź też posidamy do nich licencje.
+
+\section{}
+
+\begin{figure}[h!]
+  \caption{Porównanie czasów działania.}
+  \centering
+    \includegraphics[width=0.7\textwidth]{czas.png}
+\end{figure}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
