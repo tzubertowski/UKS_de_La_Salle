@@ -9,11 +9,13 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 DROP TABLE IF EXISTS `user` ;
 
 CREATE  TABLE IF NOT EXISTS `user` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `first` VARCHAR(45) NULL ,
   `last` VARCHAR(45) NULL ,
+  `email` VARCHAR(45) NULL ,
   `password` VARCHAR(32) NULL ,
-  PRIMARY KEY (`id`) )
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
 ENGINE = InnoDB;
 
 
@@ -59,7 +61,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `category` ;
 
 CREATE  TABLE IF NOT EXISTS `category` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(50) NULL ,
   `description` VARCHAR(255) NULL ,
   `weight` INT NULL ,
@@ -73,7 +75,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `subcategory_type` ;
 
 CREATE  TABLE IF NOT EXISTS `subcategory_type` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(255) NULL ,
   `description` VARCHAR(255) NULL ,
   PRIMARY KEY (`id`) )
@@ -86,7 +88,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `subcategory` ;
 
 CREATE  TABLE IF NOT EXISTS `subcategory` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `title` VARCHAR(50) NULL ,
   `description` VARCHAR(255) NULL ,
   `weight` INT NULL ,
@@ -114,7 +116,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `news` ;
 
 CREATE  TABLE IF NOT EXISTS `news` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `id_user` INT NULL ,
   `id_category` INT NULL ,
   `title` VARCHAR(50) NULL ,
@@ -150,7 +152,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `calendar` ;
 
 CREATE  TABLE IF NOT EXISTS `calendar` (
-  `id` INT NOT NULL ,
+  `id` INT NOT NULL AUTO_INCREMENT ,
   `id_user` INT NULL ,
   `id_category` INT NULL ,
   `title` VARCHAR(50) NULL ,
