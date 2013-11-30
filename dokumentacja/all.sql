@@ -14,44 +14,9 @@ CREATE  TABLE IF NOT EXISTS `user` (
   `last` VARCHAR(45) NULL ,
   `email` VARCHAR(45) NULL ,
   `password` VARCHAR(32) NULL ,
+  `rank` INT NULL ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `rank`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `rank` ;
-
-CREATE  TABLE IF NOT EXISTS `rank` (
-  `id` VARCHAR(50) NOT NULL ,
-  `rank` INT NULL ,
-  PRIMARY KEY (`id`) )
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `user_rank`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `user_rank` ;
-
-CREATE  TABLE IF NOT EXISTS `user_rank` (
-  `id_user` INT NOT NULL ,
-  `id_rank` VARCHAR(50) NOT NULL ,
-  UNIQUE INDEX `id_user_UNIQUE` (`id_user` ASC) ,
-  INDEX `fk_user_rank_1` (`id_user` ASC) ,
-  INDEX `fk_user_rank_2` (`id_rank` ASC) ,
-  CONSTRAINT `fk_user_rank_1`
-    FOREIGN KEY (`id_user` )
-    REFERENCES `user` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_rank_2`
-    FOREIGN KEY (`id_rank` )
-    REFERENCES `rank` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
