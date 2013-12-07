@@ -37,6 +37,7 @@ class Calendar extends CActiveRecord
 			array('id_user, id_category', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>50),
 			array('description', 'length', 'max'=>255),
+                        array('place', 'length', 'max'=>255),
 			array('date_start, date_end', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -68,6 +69,7 @@ class Calendar extends CActiveRecord
 			'id_category' => 'Id Category',
 			'title' => 'Title',
 			'description' => 'Description',
+                        'place' => 'Place',
 			'date_start' => 'Date Start',
 			'date_end' => 'Date End',
 		);
@@ -96,6 +98,7 @@ class Calendar extends CActiveRecord
 		$criteria->compare('id_category',$this->id_category);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('description',$this->description,true);
+                $criteria->compare('place',$this->place,true);
 		$criteria->compare('date_start',$this->date_start,true);
 		$criteria->compare('date_end',$this->date_end,true);
 

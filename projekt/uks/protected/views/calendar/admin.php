@@ -50,10 +50,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'id_category',
 		'title',
 		'description',
+                'place',
 		'date_start',
-		/*
 		'date_end',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -26,6 +26,7 @@ $this->menu=array(
 		'id_category',
 		'title',
 		'description',
+                'place',
 		'date_start',
 		'date_end',
 	),

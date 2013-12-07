@@ -122,6 +122,7 @@ CREATE  TABLE IF NOT EXISTS `calendar` (
   `id_category` INT NULL ,
   `title` VARCHAR(50) NULL ,
   `description` VARCHAR(255) NULL ,
+  `place` VARCHAR(255) NULL ,
   `date_start` DATETIME NULL ,
   `date_end` DATETIME NULL ,
   PRIMARY KEY (`id`) ,
