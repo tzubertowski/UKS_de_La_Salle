@@ -65,13 +65,13 @@ class Calendar extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'id_user' => 'Id User',
-			'id_category' => 'Id Category',
-			'title' => 'Title',
-			'description' => 'Description',
-                        'place' => 'Place',
-			'date_start' => 'Date Start',
-			'date_end' => 'Date End',
+			'id_user' => 'Id Użytkownika',
+			'id_category' => 'Id Sekcji',
+			'title' => 'Tytył',
+			'description' => 'Opis',
+                        'place' => 'Miejsce',
+			'date_start' => 'Data Początku',
+			'date_end' => 'Data Końca',
 		);
 	}
 

@@ -3,13 +3,13 @@
 /* @var $model Calendar */
 
 $this->breadcrumbs=array(
-	'Calendars'=>array('index'),
-	'Manage',
+	'Wydarzenia'=>array('index'),
+	'Zarządzaj',
 );
 
 $this->menu=array(
-	array('label'=>'List Calendar', 'url'=>array('index')),
-	array('label'=>'Create Calendar', 'url'=>array('create')),
+	array('label'=>'Lista wydarzeń', 'url'=>array('index')),
+	array('label'=>'Utwórz wydarzenie', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "

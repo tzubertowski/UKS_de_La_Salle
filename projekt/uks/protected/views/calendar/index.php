@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Calendars',
+	'Terminarz',
 );
 
 $this->menu=array(
-	array('label'=>'Create Calendar', 'url'=>array('create')),
-	array('label'=>'Manage Calendar', 'url'=>array('admin')),
+	array('label'=>'Utwórz wydarzenie', 'url'=>array('create')),
+	array('label'=>'Zarządzaj wydarzeniem', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Calendars</h1>
+<h1>Terminarz</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
