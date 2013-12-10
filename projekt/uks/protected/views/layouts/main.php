@@ -6,6 +6,7 @@
         <meta name="language" content="en" />
 
         <!-- blueprint CSS framework -->
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/menu.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
         <!--[if lt IE 8]>
@@ -14,8 +15,14 @@
 
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+        <?php
+        Yii::app()->clientScript->registerCoreScript('jquery');
+        Yii::app()->bootstrap->register();
+        ?>
 
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+
     </head>
 
     <body>
@@ -25,23 +32,34 @@
             <div id="header">
                 <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
             </div><!-- header -->
-
-            <div id="mainmenu">
+            <div id="navigationmenu">
                 <?php
-                $dane = array();
-                array_push($dane, array('label' => 'Home', 'url' => array('/site/index')));
-                foreach (Category::model()->findAll((array('order' => 'weight ASC'))) as $row) {
-                    array_push($dane, array('label' => $row->title, 'url' => array('/site/' . $row->title)));
+                //generowanie menu
+                $menuarray = array();
+                $i = 0;                
+                foreach (Category::model()->findAll(array('order' => 'weight')) as $category) {
+                    $menucategorylabel = $category->getAttribute('title');
+                    $criteria = new CDbCriteria();
+                    $criteria->addSearchCondition('id_category', $category->getAttribute('id'));
+                    $menucontent = "";
+                    foreach (Subcategory::model()->findAll($criteria) as $subcategory) {
+                        $menucontent .= "<li id={$subcategory->getAttribute('title')}>{$subcategory->getAttribute('title')}</li>";
+                    }
+                    if ($i == 0) {
+                        array_push($menuarray, array('label' => $menucategorylabel, 'content' => $menucontent, 'active' => true));
+                    } else {
+                        array_push($menuarray, array('label' => $menucategorylabel, 'content' => $menucontent));
+                    }
+                    $i++;
                 }
-                array_push($dane, array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')));
-                array_push($dane, array('label' => 'Contact', 'url' => array('/site/contact')));
-                array_push($dane, array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest));
-                array_push($dane, array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest));
-                $this->widget('zii.widgets.CMenu', array(
-                    'items' => $dane
+
+                $this->widget('bootstrap.widgets.TbTabs', array(
+                    'type' => 'tabs',
+                    'placement' => 'above', // 'above', 'right', 'below' or 'left'
+                    'tabs' => $menuarray,
                 ));
                 ?>
-            </div><!-- mainmenu -->
+            </div>
             <?php if (isset($this->breadcrumbs)): ?>
                 <?php
                 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -50,17 +68,21 @@
                 ?><!-- breadcrumbs -->
             <?php endif ?>
 
-<?php echo $content; ?>
+            <?php echo $content; ?>
 
             <div class="clear"></div>
 
             <div id="footer">
                 Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
                 All Rights Reserved.<br/>
-<?php echo Yii::powered(); ?>
+                <?php echo Yii::powered(); ?>
             </div><!-- footer -->
 
         </div><!-- page -->
-
+        <script>
+            $('.nav-tabs > li > a').hover(function() {
+                $(this).tab('show');
+            });
+        </script>
     </body>
 </html>
