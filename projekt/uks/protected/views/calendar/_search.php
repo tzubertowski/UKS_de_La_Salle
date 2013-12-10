@@ -36,6 +36,11 @@
 		<?php echo $form->textField($model,'description',array('size'=>60,'maxlength'=>255)); ?>
 	</div>
 
+        <div class="row">
+		<?php echo $form->label($model,'place'); ?>
+		<?php echo $form->textField($model,'place',array('size'=>60,'maxlength'=>255)); ?>
+	</div>
+    
 	<div class="row">
 		<?php echo $form->label($model,'date_start'); ?>
 		<?php echo $form->textField($model,'date_start'); ?>

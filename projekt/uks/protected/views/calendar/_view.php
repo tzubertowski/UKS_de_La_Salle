@@ -25,6 +25,10 @@
 	<?php echo CHtml::encode($data->description); ?>
 	<br />
 
+        <b><?php echo CHtml::encode($data->getAttributeLabel('place')); ?>:</b>
+	<?php echo CHtml::encode($data->place); ?>
+	<br />
+        
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_start')); ?>:</b>
 	<?php echo CHtml::encode($data->date_start); ?>
 	<br />

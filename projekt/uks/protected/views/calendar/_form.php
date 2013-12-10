@@ -43,6 +43,12 @@
 		<?php echo $form->error($model,'description'); ?>
 	</div>
 
+        <div class="row">
+		<?php echo $form->labelEx($model,'place'); ?>
+		<?php echo $form->textField($model,'place',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'place'); ?>
+	</div>
+        
 	<div class="row">
 		<?php echo $form->labelEx($model,'date_start'); ?>
 		<?php echo $form->textField($model,'date_start'); ?>
