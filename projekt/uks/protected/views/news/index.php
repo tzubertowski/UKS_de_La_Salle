@@ -20,19 +20,15 @@ $this->widget('zii.widgets.CListView', array(
     'dataProvider'=>$dataProvider,
     'itemView'=>'_view',
     'template'=>"{items}\n{pager}",
-    'attributes'=>array(
-    'title',
-    'content',
-    'date_added',
-  ),
 ));
 
 /*
 $data = array();
-foreach($model as $m){  // loop to get the data (this is different from the complex way)
+foreach($model as $m){  
 $data[] = $m->attributes;
 }
-// the pagination widget with some options to mess
+
+// widgetem mozna zmieniac strony ajaxowo
 $this->widget('zii.widgets.CsView', array(
     'dataProvider'=>$dataProvider,
     'enablePagination'=>true,
