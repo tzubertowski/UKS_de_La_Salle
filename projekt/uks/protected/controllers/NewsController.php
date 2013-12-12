@@ -122,10 +122,59 @@ class NewsController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('News');
+		$criteria=new CDbCriteria(array(
+			'order' => 'date_added desc',
+
+		));
+
+		$item_count = News::model()->count($criteria);
+		$pages = new CPagination($item_count);
+        $pages->setPageSize(Yii::app()->params['listPerPage']);
+        $pages->applyLimit($criteria);
+
+		$dataProvider=new CActiveDataProvider('News', array(
+			'pagination'=>array(
+				'pageSize'=>Yii::app()->params['postsPerPage'],
+			),
+			'criteria'=>$criteria,
+		));
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
+			'item_count'=>$item_count,
+            'page_size'=>Yii::app()->params['listPerPage'],
+            'items_count'=>$item_count,
+            'pages'=>$pages,
 		));
+
+
+/*
+		$postarray = array();
+        $news = array();
+
+        $criteria = new CDbCriteria();
+        $criteria->order = 'date_added desc';
+
+        $item_count = News::model()->count($criteria);
+		$pages = new CPagination($item_count);
+        $pages->setPageSize(Yii::app()->params['listPerPage']);
+        $pages->applyLimit($criteria);
+
+
+		$dataProvider=new CActiveDataProvider('News');
+        $this->render('index',array(
+        	'dataProvider' => $dataProvider,
+            'model'=> News::model()->findAll($criteria),
+            'item_count'=>$item_count,
+            'page_size'=>Yii::app()->params['listPerPage'],
+            'pagination'=>array(
+            	'pageSize'=>Yii::app()->params['listPerPage'],
+        	),
+            'items_count'=>$item_count,
+            'pages'=>$pages,
+        ));
+
+*/
 	}
 
 	/**
@@ -170,4 +219,5 @@ class NewsController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }

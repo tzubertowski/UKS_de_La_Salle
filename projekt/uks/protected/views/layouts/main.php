@@ -53,6 +53,10 @@
                     $i++;
                 }
 
+
+
+
+
                 $this->widget('bootstrap.widgets.TbTabs', array(
                     'type' => 'tabs',
                     'placement' => 'above', // 'above', 'right', 'below' or 'left'
@@ -60,6 +64,11 @@
                 ));
                 ?>
             </div>
+
+            <div id="news_posts">
+
+            </div>
+
             <?php if (isset($this->breadcrumbs)): ?>
                 <?php
                 $this->widget('zii.widgets.CBreadcrumbs', array(
