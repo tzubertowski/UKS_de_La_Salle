@@ -50,7 +50,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=uks',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'alamakota',
+            'password' => '',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(

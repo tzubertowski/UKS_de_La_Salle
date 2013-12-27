@@ -36,7 +36,7 @@
                 <?php
                 //generowanie menu
                 $menuarray = array();
-                $i = 0;                
+                $i = 0;
                 foreach (Category::model()->findAll(array('order' => 'weight')) as $category) {
                     $menucategorylabel = $category->getAttribute('title');
                     $criteria = new CDbCriteria();
@@ -60,13 +60,17 @@
                 $this->widget('bootstrap.widgets.TbTabs', array(
                     'type' => 'tabs',
                     'placement' => 'above', // 'above', 'right', 'below' or 'left'
-                    'tabs' => $menuarray,
+                    'tabs' => TemporaryData::getNavItems(),
                 ));
                 ?>
             </div>
 
             <div id="news_posts">
-
+                <?php
+                $this->widget('bootstrap.widgets.TbCarousel', array(
+                    'items' => TemporaryData::getLatestFiveNews()
+                ));
+                ?>
             </div>
 
             <?php if (isset($this->breadcrumbs)): ?>
