@@ -1,0 +1,121 @@
+@import url('reset.css');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800&subset=latin,latin-ext);
+
+html, body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+article.news {
+    width: 667px;
+}
+
+article header {
+    height: 80px;
+}
+
+/* 
+###
+DATE
+###
+*/
+
+header .date_holder{
+    float: left;
+    display: table-cell;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+header .date_box{  
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 58px;
+    background-color: #0169b0;
+}
+
+header time{
+    position: relative;
+    display: table-cell;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+time .bolder{
+    font-weight: 700;
+}
+
+header .date_box:before{
+    position: absolute;
+    top: 58px;
+    display: block;
+    width: 58px;
+    height: 22px;
+    background-color: #0169b0;
+    content:'';
+}
+
+header .date_box:after{
+    position: absolute;
+    top: 58px;
+    right: 0;
+    width: 0px;
+    height: 0px;
+    border-top: 22px solid #01416f;
+    border-right: 22px solid transparent;
+    content:'';
+}
+
+/* 
+###
+DETAILS 
+###
+*/
+
+header .details_holder{
+    float: left;
+    margin-left: 20px;
+    height: 80px;
+}
+
+header .heading{
+    color: #1a4c71;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header .category{
+    color: #c0c0c0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+header .author{
+    display: block;
+    margin-top: 8px;
+    color: #525252;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 
+###
+NEWS 
+###
+*/
+
+article .content{
+    clear: both;
+    margin-top: 20px;
+    color: #525252;
+    font-size: 12px;
+    text-indent: 40px;
+}
