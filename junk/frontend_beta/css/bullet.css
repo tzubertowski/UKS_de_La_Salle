@@ -1,0 +1,18 @@
+@import url('reset.css');
+
+ul{
+   list-style: disc;
+   display: block;
+}
+
+ul li#address{
+    list-style-image: url('../img/icons/location.png');
+}
+
+ul li#email{
+    list-style-image: url('../img/icons/email.png');
+}
+
+ul li#phone{
+    list-style-image: url('../img/icons/phone.png');
+}
