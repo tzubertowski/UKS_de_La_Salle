@@ -1,0 +1,116 @@
+@import url('reset.css');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800&subset=latin,latin-ext);
+
+/* 
+###
+OGÓLNE 
+###
+*/
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+aside{
+    margin: 20px 20px;
+    width: 233px;
+    height: 324px;    
+}
+
+/* 
+###
+NAV 
+###
+*/
+
+nav a {
+    color: #525252;
+}
+
+nav ul{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+nav li{
+    position: relative;
+    display: table-cell;
+}
+
+nav li div{
+    display: block;
+    border-top: 1px solid #e2e2e2;
+    padding: 0 11px;
+    height: 34px;
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+nav li:nth-child(1) div{
+    border-right: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+    height: 37px;
+}
+
+nav li:not(:nth-child(1)) div{
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+nav li:nth-child(2) div{
+    border-right: 1px solid #e2e2e2;
+    border-bottom-left-radius: 2px;
+}
+
+nav li:nth-child(3) div{
+    border-right: 1px solid #e2e2e2;
+}
+
+/* 
+###
+CONTENT 
+###
+*/
+
+aside .events{
+    position: relative;
+    bottom: 2px;
+    height: 287px;
+    border-right: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+}
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+}
+
+.glyphicon:empty {
+    width: 100%;
+}
+
+.glyphicon-calendar:before {
+    content: "\e109";
+    font-size: 25px;
+    color: grey;
+}
